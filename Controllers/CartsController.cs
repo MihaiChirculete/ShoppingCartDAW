@@ -12,12 +12,9 @@ namespace ShoppingCart.Controllers
     public class CartsController : Controller
     {
         private readonly CartService _cartService = new CartService();
+
         public CartsController()
         {
-            var config = new AutoMapper.MapperConfiguration(cfg =>
-            {
-
-            });
             AutoMapper.Mapper.CreateMap<Cart, CartViewModel>();
             AutoMapper.Mapper.CreateMap<CartItem, CartItemViewModel>();
             AutoMapper.Mapper.CreateMap<Book, BookViewModel>();
@@ -25,12 +22,23 @@ namespace ShoppingCart.Controllers
             AutoMapper.Mapper.CreateMap<Category, CategoryViewModel>();
         }
 
+        // GET: Carts
+        public ActionResult Index()
+        {
+            var cart = _cartService.GetBySessionId(HttpContext.Session.SessionID);
+
+            return View(
+                AutoMapper.Mapper.Map<Cart, CartViewModel>(cart)
+            );
+        }
+
         [ChildActionOnly]
         public PartialViewResult Summary()
         {
             var cart = _cartService.GetBySessionId(HttpContext.Session.SessionID);
+
             return PartialView(
-            AutoMapper.Mapper.Map<Cart, CartViewModel>(cart)
+                AutoMapper.Mapper.Map<Cart, CartViewModel>(cart)
             );
         }
 
