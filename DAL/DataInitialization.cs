@@ -8,19 +8,19 @@ namespace ShoppingCart.DAL
     {
         protected override void Seed(ShoppingCartContext context)
         {
-            var categories = new List<Category>
+            var categories = new List<Category> 
             {
                 new Category {
-                Name = "Technology"
+                    Name = "Technology"
                 },
                 new Category {
-                Name = "Science Fiction"
+                    Name = "Science Fiction"
                 },
                 new Category {
-                Name = "Non Fiction"
+                    Name = "Non Fiction"
                 },
                 new Category {
-                Name = "Graphic Novels"
+                    Name = "Graphic Novels"
                 }
             };
 
@@ -28,29 +28,26 @@ namespace ShoppingCart.DAL
 
             var author = new Author
             {
-                Biography = "Some biography description here",
+                Biography = "...",
                 FirstName = "Jamie",
                 LastName = "Munro"
             };
 
             var books = new List<Book>
             {
-                new Book
-                {
+                new Book {
                     Author = author,
                     Category = categories[0],
                     Description = "...",
                     Featured = true,
-                    ImageUrl =
-                    "http://ecx.images-amazon.com/images/I/51T%2BWt430bL._AA160_.jpg",
+                    ImageUrl = "http://ecx.images-amazon.com/images/I/51T%2BWt430bL._AA160_.jpg",
                     Isbn = "1491914319",
                     ListPrice = 19.99m,
                     SalePrice = 17.99m,
                     Synopsis = "...",
                     Title = "Knockout.js: Building Dynamic Client-Side Web Applications"
                 },
-                new Book
-                {
+                new Book {
                     Author = author,
                     Category = categories[0],
                     Description = "...",
@@ -60,10 +57,9 @@ namespace ShoppingCart.DAL
                     ListPrice = 14.99m,
                     SalePrice = 13.99m,
                     Synopsis = "...",
-                    Title = "20 Recipes for Programming PhoneGap"
+                    Title = "20 Recipes for Programming PhoneGap: Cross-Platform Mobile Development for Android and iPhone"
                 },
-                new Book
-                {
+                new Book {
                     Author = author,
                     Category = categories[0],
                     Description = "...",
@@ -75,8 +71,7 @@ namespace ShoppingCart.DAL
                     Synopsis = "...",
                     Title = "20 Recipes for Programming MVC 3: Faster, Smarter Web Development"
                 },
-                new Book
-                {
+                new Book {
                     Author = author,
                     Category = categories[0],
                     Description = "...",
@@ -87,7 +82,7 @@ namespace ShoppingCart.DAL
                     SalePrice = 13.49m,
                     Synopsis = "...",
                     Title = "Rapid Application Development With CakePHP"
-                },
+                }
             };
 
             books.ForEach(b => context.Books.Add(b));
