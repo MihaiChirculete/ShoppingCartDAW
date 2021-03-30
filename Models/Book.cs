@@ -23,4 +23,5 @@ namespace ShoppingCart.Models
         {
             get; set;
         }
+    }
 }
