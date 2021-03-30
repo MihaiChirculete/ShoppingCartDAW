@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ShoppingCart.Models
+﻿namespace ShoppingCart.Models
 {
     public class Book
     {
@@ -18,10 +13,8 @@ namespace ShoppingCart.Models
         public decimal ListPrice { get; set; }
         public decimal SalePrice { get; set; }
         public bool Featured { get; set; }
+
         public virtual Author Author { get; set; }
-        public virtual Category Category
-        {
-            get; set;
-        }
+        public virtual Category Category { get; set; }
     }
 }

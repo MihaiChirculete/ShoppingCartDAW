@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingCart.Models
@@ -12,7 +9,7 @@ namespace ShoppingCart.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Biography { get; set; }
-        
+
         [NotMapped]
         public string FullName
         {
@@ -21,6 +18,7 @@ namespace ShoppingCart.Models
                 return FirstName + ' ' + LastName;
             }
         }
+
         public virtual ICollection<Book> Books { get; set; }
     }
 }
